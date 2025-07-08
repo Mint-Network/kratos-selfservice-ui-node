@@ -25,6 +25,7 @@ form[data-testid="login-flow-oidc"] {
 
 
 /* Move Google login to the end */
+[data-testid="registration-flow-oidc"],
 div:has(form[data-testid="login-flow-oidc"]) {
   order: 3 !important;
 }
@@ -40,3 +41,16 @@ form[data-testid="login-flow"] {
   padding-bottom: 1rem !important;
   margin-bottom: 1rem !important;
 }
+
+div[data-testid="node/input/traits.gridUser.userName"] {
+  display: none !important;
+}
+
+div[data-testid="node/input/traits.gridUser.org"] {
+  display: none !important;
+}
+
+div[data-testid="node/input/traits.gridUser.password"] {
+  display: none !important;
+}
+
