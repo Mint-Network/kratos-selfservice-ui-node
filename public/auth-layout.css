@@ -6,3 +6,51 @@
   /* we need this padding since the footer will hide content at the bottom of the container */
   padding-bottom: 5.5rem;
 }
+
+/* Force the grid to be a column */
+.ory_elements__grid__roeg5j0.ory_elements__grid_gap_32__roeg5j7 {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Move Google login to the end */
+form[data-testid="login-flow-oidc"] {
+  order: 3 !important; 
+}
+
+/* Hide divider */
+.ory_elements__divider__1312gjt1 {
+  display: none; 
+}
+
+
+/* Move Google login to the end */
+[data-testid="registration-flow-oidc"],
+div:has(form[data-testid="login-flow-oidc"]) {
+  order: 3 !important;
+}
+
+/* Move login form to the 2nd pos */
+div:has(form[data-testid="login-flow"]) {
+  order: 2 !important;
+}
+
+
+form[data-testid="login-flow"] {
+  border-bottom: 1px solid var(--ory-theme-border-def) !important;
+  padding-bottom: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+div[data-testid="node/input/traits.gridUser.userName"] {
+  display: none !important;
+}
+
+div[data-testid="node/input/traits.gridUser.org"] {
+  display: none !important;
+}
+
+div[data-testid="node/input/traits.gridUser.password"] {
+  display: none !important;
+}
+
