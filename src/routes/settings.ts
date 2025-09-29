@@ -48,6 +48,14 @@ export const createSettingsRoute: RouteCreator =
             .then(({ data }) => data.logout_url)
             .catch(() => "")) || ""
 
+        flow.ui.nodes = flow.ui.nodes.filter((n: any) => {
+          if (n.group === "profile") {
+            return n.attributes.name === "traits.email"
+          }
+          return true 
+        })
+
+
         const settingsScreen = UserSettingsScreen(
           {
             flow,

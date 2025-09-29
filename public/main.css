@@ -163,3 +163,15 @@ footer {
     background: var(--ory-theme-background-surface);
   }
 }
+
+label,
+.ory_elements__typography_size_small__vpyugz8,  /* Ory form labels */
+.ory_elements__typography_type_regular__vpyugzm {
+  color: var(--ory-theme-text-def) !important;
+}
+
+input,
+textarea,
+select {
+  color: var(--ory-theme-input-text, #ffffff) !important;
+}
