@@ -1,6 +1,6 @@
 {
   "name": "@ory/kratos-selfservice-ui-node",
-  "version": "0.23.8",
+  "version": "0.23.10",
   "description": "A reference implementation of a selfservice UI for ORY Kratos in node.js",
   "homepage": "https://github.com/ory/kratos-selfservice-ui-node#readme",
   "bugs": {
@@ -18,7 +18,7 @@
     "views/*"
   ],
   "scripts": {
-    "build": "rm -rf lib/* && tsc",
+    "build": "rm -rf lib/* && npx tsc",
     "serve": "node lib/index.js",
     "start": "nodemon",
     "test": "exit 0",
@@ -27,15 +27,15 @@
   },
   "prettier": "ory-prettier-styles",
   "dependencies": {
-    "@ory/client": "1.19.0",
-    "@ory/elements-markup": "0.6.0",
+    "@ory/client": "1.21.5",
+    "@ory/elements-markup": "0.9.0",
     "@redtea/format-axios-error": "2.1.1",
     "accept-language-parser": "1.5.0",
-    "axios": "1.8.2",
-    "body-parser": "1.20.3",
+    "axios": "1.13.5",
+    "body-parser": "1.20.4",
     "cookie-parser": "1.4.7",
     "csrf-csrf": "3.0.1",
-    "express": "4.21.2",
+    "express": "4.22.1",
     "express-handlebars": "7.1.2",
     "express-jwt": "8.4.1",
     "express-winston": "4.2.0",
@@ -48,7 +48,7 @@
     "@types/axios": "0.14.0",
     "@types/body-parser": "1.19.2",
     "@types/cookie-parser": "1.4.3",
-    "@types/express": "4.17.17",
+    "@types/express": "4.17.21",
     "@types/express-handlebars": "6.0.2",
     "@types/handlebars-helpers": "0.5.3",
     "@types/jwt-decode": "3.1.0",
@@ -65,5 +65,10 @@
   "engines": {
     "node": ">=18",
     "npm": ">=8.11.0"
+  },
+  "overrides": {
+    "express-handlebars": {
+      "glob": "11.1.0"
+    }
   }
 }
