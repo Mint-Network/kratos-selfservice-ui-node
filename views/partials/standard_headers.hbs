@@ -2,7 +2,39 @@
 {{!-- <link rel="icon" href="{{{faviconUrl}}}" type="{{{faviconType}}}" /> --}}
 <link rel="icon" href="/codex-drm/ui/images/favicon-draft-m.png" type="image/png">
 <meta charset="utf-8" />
-<title>CreditNet</title>
+<title>PrimeOne</title>
+<script>
+  (function () {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    var hostname = window.location.hostname;
+    var logoFile = "logo.svg";
+
+    if (hostname === "localhost" || hostname === "127.0.0.1") {
+      logoFile = "logo-dev.svg";
+    } else if (hostname === "crdnet-uat.codexnetwork.org") {
+      logoFile = "logo-uat.svg";
+    }
+
+    var logoSrc = "/codex-drm/ui/images/" + logoFile;
+    window.__brandLogoSrc = logoSrc;
+
+    var applyLogo = function () {
+      var logoElements = document.querySelectorAll("[data-brand-logo]");
+      for (var i = 0; i < logoElements.length; i += 1) {
+        logoElements[i].setAttribute("src", logoSrc);
+      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", applyLogo);
+    } else {
+      applyLogo();
+    }
+  })();
+</script>
 <link rel="preload" href="assets/inter/Inter-Regular.woff2?v=3.19" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="assets/inter/Inter-Bold.woff2?v=3.19" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="assets/inter/Inter-SemiBold.woff2?v=3.19" as="font" type="font/woff2" crossorigin="anonymous">
